@@ -7,13 +7,13 @@
     <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
     <script th:inline="javascript">
         // Controller에서 받은 세션에 저장된 값
-        const SS_USER_ID = /*[[${session.SS_USER_ID}]]*/ '';
+        const SS_USER_ID = [[${session.SS_USER_ID}]];
 
         // 공지사항 게시글 작성자 아이디
-        const user_id = /*[[${rDTO.user_id}]]*/ '';
+        const user_id = [[${rDTO.user_id}]];
 
         // 현재 글번호, 자바에서 받을 변수들은 자바스크립트 변수로 저장하면 편함
-        const nSeq = /*[[${rDTO.notice_seq}]]*/'';
+        const nSeq = [[${rDTO.notice_seq}]];
 
         // HTML로딩이 완료되고, 실행됨
         $(document).ready(function () {
@@ -72,10 +72,13 @@
         <div class="divTableRow">
             <div class="divTableCell">제목
             </div>
-            <div class="divTableCell">[[${rDTO.title}]]
+            <div class="divTableCell" th:if="${dto.notice_yn=='Y'}">[공지] [[${rDTO.title}]]
+                                    <!-- 공지글 등록이 '예'라면 제목 앞부분에 '[공지]'가 붙여짐 -->
             </div>
+<!--            <div class="divTableCell">[[${rDTO.title}]]
+            </div>-->
         </div>
-        <div class="divTableRow">
+<!--        <div class="divTableRow">
             <div class="divTableCell">공지글 여부
             </div>
             <div class="divTableCell">
@@ -84,8 +87,8 @@
 
                 아니오<input type="radio" name="notice_yn"
                           value="N" th:checked="${rDTO.notice_yn == 'N'}"/>
-            </div>
         </div>
+        </div>-->
         <div class="divTableRow">
             <div class="divTableCell">작성일
             </div>
