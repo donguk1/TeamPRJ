@@ -74,7 +74,7 @@
 
             // 초기화면으로
             $("#btnCancel").on("click", function () { // 버튼 클릭했을때, 발생되는 이벤트 생성함(onclick 이벤트와 동일함)
-                location.href = "/siso/index";
+                location.href = "/index";
             })
 
         })
@@ -232,7 +232,7 @@
 
 <body>
     <div class="main">
-        <a href="/siso/index"><h1><em>Join SISO TRAVEL</em></h1></a>
+        <a href="/index"><h1><em>Join SISO TRAVEL</em></h1></a>
         <hr>
 
         <form name="join" method="post" action="/user/insertUserInfo" onsubmit="doSubmit(this)" id="f">
