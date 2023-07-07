@@ -1,9 +1,7 @@
-package kopo.poly.service;
+package kopo.poly1.service;
 
-import kopo.poly.dto.MailDTO;
+import kopo.poly1.dto.MailDTO;
 
 public interface IMailService {
-
-    // 메일 발송
-    int doSendMail(MailDTO pDTO);
+    int doSendMail(MailDTO pDTO); // 메일 발송
 }

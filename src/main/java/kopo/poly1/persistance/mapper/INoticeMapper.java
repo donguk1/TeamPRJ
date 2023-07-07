@@ -1,29 +1,22 @@
-package kopo.poly.persistance.mapper;
+package kopo.poly1.persistance.mapper;
 
-import kopo.poly.dto.NoticeDTO;
+import kopo.poly1.dto.NoticeDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-@Mapper
+@Mapper // sql쿼리를 실행시켜주는 매개체
 public interface INoticeMapper {
 
-    //게시판 리스트
-    List<NoticeDTO> getNoticeList() throws Exception;
+    // 게시판 목록을 가져와야 하므로 List<NoticeDTO>를 반환타입으로 가짐
+    List<NoticeDTO> getNoticeList() throws Exception; // 게시판 리스트
+    void insertNoticeInfo(NoticeDTO pDTO) throws Exception; // 게시판 글 등록
 
-    //게시판 글 등록
-    void insertNoticeInfo(NoticeDTO pDTO) throws Exception;
+    NoticeDTO getNoticeInfo(NoticeDTO pDTO) throws Exception; // 게시판 상세보기
 
-    //게시판 상세보기
-    NoticeDTO getNoticeInfo(NoticeDTO pDTO) throws Exception;
+    void updateNoticeReadCnt(NoticeDTO pDTO) throws Exception; // 게시판 조회수 업데이트
 
-    //게시판 조회수 업데이트
-    void updateNoticeReadCnt(NoticeDTO pDTO) throws Exception;
+    void updateNoticeInfo(NoticeDTO pDTO) throws Exception; // 게시판 글 수정
 
-    //게시판 글 수정
-    void updateNoticeInfo(NoticeDTO pDTO) throws Exception;
-
-//    //게시판 글 삭제
-//    void deleteNoticeInfo(NoticeDTO pDTO) throws Exception;
-
+    void deleteNoticeInfo(NoticeDTO pDTO) throws Exception; // 게시판 글 삭제
 }

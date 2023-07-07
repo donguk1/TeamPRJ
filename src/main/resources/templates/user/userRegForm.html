@@ -129,11 +129,11 @@
                 return;
             }
 
-            if (userIdCheck !== "N") {
-                alert("아이디 중복 체크 및 중복되지 않은 아이디로 가입 바랍니다.");
-                f.user_id.focus();
-                return;
-            }
+             if (userIdCheck !== "N") {
+                 alert("아이디 중복 체크 및 중복되지 않은 아이디로 가입 바랍니다.");
+                 f.user_id.focus();
+                 return;
+             }
 
             if (f.user_name.value === "") {
                 alert("이름을 입력하세요.");
@@ -171,7 +171,7 @@
                 return;
             }
 
-            if (f.authNumber.value != emailAuthNumber) {
+            if (f.authNumber.value !== emailAuthNumber) {
                 alert("이메일 인증번호가 일치하지 않습니다.");
                 f.authNumber.focus();
                 return;
@@ -190,24 +190,24 @@
             }
 
             // Ajax 호출해서 회원가입하기
-            // $.ajax({
-            //         url: "/user/insertUserInfo",
-            //         type: "post", // 전송방식은 Post
-            //         dataType: "JSON", // 전송 결과는 JSON으로 받기
-            //         data: $("#f").serialize(), // form 태그 내 input 등 객체를 자동으로 전송할 형태로 변경하기
-            //         success: function (json) { // /notice/noticeUpdate 호출이 성공했다면..
-            //
-            //             if (json.result === 1) { // 회원가입 성공
-            //                 alert(json.msg); // 메시지 띄우기
-            //                 location.href = "/user/login"; // 로그인 페이지 이동
-            //
-            //             } else { // 회원가입 실패
-            //                 alert(json.msg); // 메시지 띄우기
-            //             }
-            //
-            //         }
-            //     }
-            // )
+            /*$.ajax({
+                    url: "/user/insertUserInfo",
+                    type: "post", // 전송방식은 Post
+                    dataType: "JSON", // 전송 결과는 JSON으로 받기
+                    data: $("#f").serialize(), // form 태그 내 input 등 객체를 자동으로 전송할 형태로 변경하기
+                    success: function (json) { // /notice/noticeUpdate 호출이 성공했다면..
+
+                        if (json.result === 1) { // 회원가입 성공
+                            alert(json.msg); // 메시지 띄우기
+                            location.href = "/siso/index"; // 로그인 페이지 이동
+
+                        } else { // 회원가입 실패
+                            alert(json.msg); // 메시지 띄우기
+                        }
+
+                    }
+                }
+            )*/
         }
 
     </script>
@@ -278,5 +278,6 @@
         <button id="btnSend" type="submit">회원가입</button>
     </div>
 </form>
+
 </body>
 </html>
